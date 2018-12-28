@@ -1,0 +1,46 @@
+---
+order: 0
+title: 基本容器
+---
+
+import { Box, Info, Doc } from '@/components';
+const { Playground } = Doc;
+
+
+## test
+
+<Playground> 
+    <Box style={{ background: '#fff' }}>normal Box</Box>  
+</Playground>
+
+## 组件演示  
+
+
+<Box style={{ background: '#fff' }}>normal Box</Box>  
+
+```js
+<Box style={{ background: '#fff' }}>normal Box</Box> 
+```  
+
+<Box style={{ background: '#fff' }} margin={'top'} loading={true}>loading Box</Box>  
+
+```js
+<Box style={{ background: '#fff' }} margin={'top'} loading={true}>loading Box</Box> 
+```  
+
+<Box style={{ background: '#fff' }} margin={'top'} bordered={false}>no border Box</Box>  
+
+```js
+<Box style={{ background: '#fff' }} margin={'top'} bordered={false}>no border Box</Box> 
+```  
+
+<Box style={{ background: '#fff' }} margin={true}>margin Box</Box>  
+
+```js
+<Box style={{ background: '#fff' }} margin={true}>margin Box</Box> 
+```  
+
+## API
+
+
+<Doc>{Box}</Doc>

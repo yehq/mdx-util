@@ -9,8 +9,9 @@ const mdxExportJSONByDefault = require('mdx-constant')
 const grayMatter = require('gray-matter')
 const typography = require('./typography')
 const rehypePrism = require('./rehype-prism')
+const rehypeCreams = require('./rehype-creams')
 
-module.exports = async function(source) {
+module.exports = async function (source) {
   let result
   const { data, content: mdxContent } = grayMatter(source);
   const callback = this.async()
@@ -18,11 +19,12 @@ module.exports = async function(source) {
     {
       mdPlugins: [
         slug,
-        images, 
+        images,
         emoji,
         [textr, { plugins: [typography] }]
       ],
       hastPlugins: [
+        rehypeCreams,
         rehypePrism,
       ],
       compilers: [
@@ -31,12 +33,12 @@ module.exports = async function(source) {
       ]
     },
     getOptions(this),
-    {filepath: this.resourcePath}
+    { filepath: this.resourcePath }
   );
 
   try {
     result = await mdx(mdxContent, options)
-  } catch(err) {
+  } catch (err) {
     return callback(err)
   }
 

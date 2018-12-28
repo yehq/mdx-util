@@ -14,9 +14,9 @@
     "@mdx-js/mdx": "^0.16.0",
     "@mdx-js/tag": "^0.16.0",
     "gray-matter": "^4.0.1",
-    "loader-utils": "^1.1.0",
     "hast-util-to-html": "^4.0.1",
     "hast-util-to-string": "^1.0.1",
+    "loader-utils": "^1.1.0",
     "mdx-constant": "^0.1.0",
     "mdx-table-of-contents": "^0.1.0",
     "prismjs": "^1.15.0",
@@ -32,9 +32,15 @@
     "typographic-em-dashes": "^1.0.2",
     "typographic-en-dashes": "^1.0.1",
     "typographic-quotes": "^1.2.1",
+    "unist-util-is": "^2.1.2",
     "unist-util-visit": "^1.4.0"
   },
   "repository": {
     "url": "https://github.com/frontarm/mdx-util"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.28.2"
   }
 }
