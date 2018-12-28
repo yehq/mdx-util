@@ -21,7 +21,7 @@ function addComponentsProps(node, index) {
         const content = getPlaygroundChildren(node.value);
         node.value = node.value.replace(
             tagOpen,
-            `<${name} code={"${content}"}`
+            `<${componentName} code={\`${content}\`}`
         )
     }
 }
