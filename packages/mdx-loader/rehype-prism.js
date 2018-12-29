@@ -7,11 +7,7 @@ const visit = require('unist-util-visit');
 const nodeToString = require('hast-util-to-string');
 const nodeToHTML = require('hast-util-to-html');
 const refractor = require('refractor');
-
-const aliases = {
-  'js': 'jsx',
-  'html': 'markup',
-}
+const getLanguage = require('./utils/getLanguage');
 
 module.exports = options => {
   options = options || {};
@@ -25,7 +21,7 @@ module.exports = options => {
       return;
     }
 
-    const lang = getLanguage(node, options.aliases || aliases);
+    const lang = getLanguage(node.properties.className, options.aliases);
 
     if (lang === null) {
       return;
@@ -53,16 +49,3 @@ module.exports = options => {
   }
 };
 
-function getLanguage(node, aliases) {
-  const className = node.properties.className || [];
-
-  for (const classListItem of className) {
-    if (classListItem.slice(0, 9) === 'language-') {
-      let language = classListItem.slice(9).replace(/{.*/, '');
-      let alias = aliases[language]
-      return alias || language
-    }
-  }
-
-  return null;
-}

@@ -1,6 +1,6 @@
 {
   "name": "mdx-creams-loader",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "index.js",
   "keywords": [
     "mdx",
@@ -10,6 +10,9 @@
   "description": "A batteries-included MDX loader for Webpack.",
   "author": "James K Nelson <james@frontarm.com> (https://frontarm.com/authors/james-k-nelson/)",
   "license": "MIT",
+  "scripts": {
+    "test": "node ./test/index.js"
+  },
   "dependencies": {
     "@mdx-js/mdx": "^0.16.0",
     "@mdx-js/tag": "^0.16.0",

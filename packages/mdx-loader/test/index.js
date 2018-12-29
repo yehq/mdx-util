@@ -24,4 +24,5 @@ const config = {
 };
 
 webpack(config, (err, stats) => {
+    if (err) console.log(err)
 })
