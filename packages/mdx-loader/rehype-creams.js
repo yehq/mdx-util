@@ -54,7 +54,7 @@ function getComponentName(value) {
  * @param {string} value 
  */
 function getPlaygroundChildren(value) {
-    const regExp = new RegExp(`<${playgroundName}[^>]*>\\s*\\n?([\\s\\S]*)<\\/${playgroundName}[^>]*>`);
+    const regExp = new RegExp(`<${playgroundName}[^>]*>[ \\t]*\\n?([\\s\\S]*)<\\/${playgroundName}[^>]*>`);
     const match = value.match(regExp);
     return match && match[1];
 }
