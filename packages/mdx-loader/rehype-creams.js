@@ -30,7 +30,6 @@ module.exports = (options) => {
                 type: "root",
                 children: highlightContent
             })
-            console.log('===', result, '===')
             node.value = node.value.replace(
                 tagOpen,
                 `<${componentName} code={\`${result}\`}`
@@ -55,7 +54,7 @@ function getComponentName(value) {
  * @param {string} value 
  */
 function getPlaygroundChildren(value) {
-    const regExp = new RegExp(`<${playgroundName}[^>]*>\\s*\\n?([\\s\\S]*)\\n?<\\/${playgroundName}[^>]*>`);
+    const regExp = new RegExp(`<${playgroundName}[^>]*>\\s*\\n?([\\s\\S]*)<\\/${playgroundName}[^>]*>`);
     const match = value.match(regExp);
     return match && match[1];
 }
